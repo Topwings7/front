@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title>04ajax_xml.html</title>
+    <script>
+    window.addEventListener("DOMContentLoaded",function(){
+      var btn = document.querySelector("button").onclick = ()=>{
+        //1
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = ()=>{
+          //4는 데이터 전송완료상태
+          //http코드를따로 보낸준다 200은 정상적인 응답일때   서버측에서 만들어서 보내준다
+          if(xhr.readyState == 4 && xhr.status == 200){
+            //서버가 응답데이터가
+            //xml객체로 가져옴
+            var result =  xhr.responseXML;
+            console.log(result);
+            console.dir(result);
+            //xml객체 == document객체 식으로내용추출이 가능하다
+            var nameList = result.getElementsByTagName("name");
+            var priceList = result.querySelectorAll("price");
+            console.log(nameList);
+            console.log(priceList);
+            var div = document.querySelector("div");
+            for (var i = 0; i < nameList.length; i++) {
+              div.innerHTML += nameList[i].innerHTML+":"+priceList[i].innerHTML;
+              div.innerHTML += "<br>";
+            }
+          }
+        }
+        //2
+        xhr.open("get","http://localhost:8080/mydata/data.xml", true);
+        //3
+        xhr.send();
+      }
+    });
+    </script>
+    <style media="screen">
+      div{border: 1px solid red;}
+    </style>
+  </head>
+  <body>
+    <h3>데이타를 가져오자</h3>
+    <div class="">
+
+    </div>
+    <button type="button" name="button">데이터 가져오기</button>
+  </body>
+</html>

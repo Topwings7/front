@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script type="text/javascript">
+       //관계를 이용한 선택
+       /*
+         $("요소:fisrt"): 요소 중 첫째
+         $("요소").first(): 요소 중 첫째
+         $("요소:last"):요소 중 마지막
+         $("요소").last(): 요소 중 마지막
+         $("요소:has(선택자)"): 선택자를 갖은 요소
+         $("요소").has(선택자): 선택자를 갖은 요소
+         $("요소:not(선택자)"): 선택자가 아닌 요소
+         $("요소").not(선택자): 선택자가 아닌 요소
+       */
+       $(function(){
+         console.log($("li").first().text());
+         console.log($("li").last().text());
+         console.log($("li").has("span"));
+         console.log($("li").not(".four"));
+         console.log($("li:contains('다섯째')"));
+       });
+     </script>
+   </head>
+   <body>
+     <ul>
+       <li>첫째</li>
+       <li><span>둘째</span></li>
+       <li><span>셋째</span></li>
+       <li class="four">넷째</li>
+       <li>다섯째</li>
+     </ul>
+     <div class="">
+       <p></p>
+       <p></p>
+       <p></p>
+     </div>
+   </body>
+ </html>

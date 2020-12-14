@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script   src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+    $(function(){
+      $("#put").click(function(){
+        $("div").animate({width:"500px"},{ //여기부터 옵션들....
+          duration:3000,
+          step:function(x){ //변화상태의 정보
+            console.log(x);
+          },
+          complete:function(){
+            alert("종료");
+          }
+        })
+        .animate({width:"100px"},3000);
+      });
+      $("#del").click(function(){
+        $("div").clearQueue(); //애니매이션단위로 들어있는 큐를 제거
+      });
+    });
+    </script>
+    <style>
+    div{width:100px ; height:100px ;  background-color: red}
+    </style>
+  </head>
+  <body>
+    <button type="button" name="button" id="put">눌러</button>
+    <button type="button" name="button" id="del">다음효과 제거</button>
+    <div >
+
+    </div>
+  </body>
+</html>

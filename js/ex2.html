@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(function(){
+      $("button").click(function(){
+        if ($("select").val()== "pick1" && $("input").val() != "") {
+          $("ul").append("<li>"+$("input").val()+"</li>");
+        }else if($("select").val()== "pick2" && $("input").val() != ""){
+          $("ol").append("<li>"+$("input").val()+"</li>");
+        }else if($("input").val() == ""){
+          alert("내용을 입력해주세요");
+        }
+      });
+    });
+    </script>
+  </head>
+  <body>
+    <select>
+      <option value="pick1">준비물</option>
+      <option value="pick2">조리법</option>
+    </select>
+    <input type="text" name="" value="">
+    <button type="button" name="button">추가</button>
+    <h1>된장찌개 레시피</h1>
+    <p>준비물</p>
+    <ul>
+    </ul>
+    <p>조리법</p>
+    <ol>
+    </ol>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+    //스크립트의 객체
+    //속성과 메서드를 갖는 아이
+    //상수 객체
+    //{키:값,키:값,키:값}
+    var person1 = {name: "나루토", age:15, height:160};
+    console.log("이름",person1.name);
+    console.log("나이",person1.age);
+    console.log("키",person1.height);
+
+    //function을 이용한 객체 만들기   //함수  객체를 만드는함수  //자바-에서의 클래스만드는방법
+    //function 생성자명(param1, param2, .....){
+    //this.속성1=param1;
+    //this.속성2=param2;
+    //}
+    function Person(name,age){
+      //속성
+      this.name = name;
+      this.age = age;
+      this.sex = "중성"; //매개변수없는것 초기화 가능하다
+      //메서드를 만들수 있다
+      this.introduce = function(){
+        return this.name+":"+this.age+":"+this.sex;
+      };
+    }
+    var p1 = new Person("이민정", 25);
+    var p2 = new Person("정민정", 19);
+    console.log(p1.introduce());
+    console.log(p2.introduce());
+    //객체를 먼저 만들고 속성을 추가할 수 있다.
+    var person2 = {}; //빈것을 만들어도  속성을 막추가할수있다
+    console.log(person2);
+    person2.name = "오민정";
+    person2.money = "2000";
+    console.log(person2);
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

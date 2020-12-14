@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+      function open(){
+        alert('윈도우 창이 열릴때 실행 onload ')
+      }
+      function myFunction(){
+      return "onbeforeunload 닫힐때 실행";
+    }
+    </script>
+  </head>
+  <body onload="open()" onbeforeunload="return myFunction()">
+    <h1> 이벤트 한방정리<h1>
+    <ul>
+      <li>HTML 이벤트 걸기  &ltElement 메소드="함수명() ; 여러개함수(가능) " &rt안에 정의 한다 function은 스크립트로 정의  </li>
+      <li>창관련</li>
+      <li>onload:창이열렸을때</li>
+      <li>ondeforeunload:창이닫히기전에  x눌르거나 나가려고할때</li>
+      <li>onpageshow: 이페이지가 열렸을때</li>
+    </ul>
+    <ul>
+      <li>form 관련 (양식)</li>
+      <li>onblur: input태그 벗어나면 대문자로</li>
+      <li>onchange: select 상자 변경시 </li>
+      <li>onfocus : input태그의 포커싱되었을때</li>
+      <li>oninput : input태그의 무언가 쓸때</li>
+      <li>oninvalid : input태그의 아무것도안쓰고 전송할때</li>
+      <li>onreset : from태그에 걸어준다 reset버튼 눌렀을때</li>
+      <li>onselect : input태그안에 텍스트를 마우스로 선택시</li>
+      <li>onsubmit : from태그에 걸어준다 submit버튼 눌렀을때</li>
+    </ul>
+    <ul>
+      <li>keybord 관련</li>
+      <li>onkeydown : 키를 누르고있는중</li>
+      <li>onkeypress :키를 눌렀을때</li>
+      <li>onkeyup :키를 뗏을때</li>
+    </ul>
+    <ul>
+      <li>마우스 관련</li>
+      <li>onclick : 마우스클릭시</li>
+      <li>ondblclick : 더블클릭시</li>
+      <li>onmousedown : 클릭중에만</li>
+      <li>onmousemove : 해당요소에 마우스 포인터를두면</li>
+      <li>onmouseover : 해당요소에 마우스 포인터를 올려두면 </li>
+      <li>onmouseout : 해당요소에 마우스 포인터가나가면</li>
+      <li>onwheel : 해당요소에서 마우스 휠을 사용하면</li>
+    </ul>
+    <ul>
+      <li>drag 관련</li>
+      <li>ondrag : &ltp&gt 끌때</li>
+      <li>ondragenter : 드래그 가능한 요소가 놓기 대상에 들어갈 때</li>
+      <li>ondragleave : 드래그 가능한 요소가 놓기 대상 밖으로 이동할 때</li>
+      <li>ondragover  : 드래그 가능한 요소가 놓기 밖으로 나가면</li>
+      <li>ondragstart : 드래그 시작시</li>
+      <li>ondrop      : 드래그 가능한 요소가 &ltdiv&gt 요소에 놓일 때 </li>
+      <li>onscroll    : &ltdiv&gr 요소가 스크롤할때 </li>
+    </ul>
+    <ul>
+      <li>Clipboard 관련</li>
+      <li>oncopy : 컨트+c 복사할때</li>
+      <li>oncut : 컨트+x 자를때</li>
+      <li>onpaste : 컨트+v 복붙할때</li>
+onpaste
+    </ul>
+  </body>
+</html>

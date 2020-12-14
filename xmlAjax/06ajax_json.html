@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title>06ajax_json.html</title>
+    <script>
+    window.addEventListener("DOMContentLoaded",function(){
+      var btn = document.querySelector("button").onclick = ()=>{
+        var xhr = new XMLHttpRequest();
+        xhr.onload = ()=>{
+          if (xhr.status == 200) {
+            var rs = xhr.responseText;
+            var obj = JSON.parse(rs);
+            var itemArr = obj.products;
+            for (var i = 0; i < itemArr.length; i++) {
+              var tr = document.createElement("tr");
+              var td1 = document.createElement("td");
+              var td2 = document.createElement("td");
+              td1.innerHTML = itemArr[i].name;
+              td2.innerHTML = itemArr[i].price;
+              tr.appendChild(td1);
+              tr.appendChild(td2);
+              document.getElementById("in").appendChild(tr);
+            }
+          }
+        }
+        xhr.open("get","http://localhost:8080/mydata/data.json",true);
+        xhr.send();
+      }
+    })
+    </script>
+  </head>
+  <body>
+    <button type="button" name="button">데이터 가져오기</button>
+    <h3>데이타를 가져오자</h3>
+    <table>
+      <tbody id="in">
+        <tr>
+          <td>상품명</td>
+          <td>가격</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script   src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+      $(function(){
+        $("#go").on("click",function(){
+          $("div").animate({left:"+=200px",top:"200px", opacity:"-=0.2"}, 2000);
+        });
+        $("#stop").on("click",function(){
+          $("div").stop();
+        });
+      });
+    </script>
+    <style media="screen">
+      div{position: absolute;}
+      img{width:400px; height:400px}
+    </style>
+  </head>
+  <body>
+    <button type="button" name="button" id="go">go</button>
+    <button type="button" name="button" id="stop">stop</button>
+    <div >
+      <img src="../img/naver/sana.png">
+    </div>
+  </body>
+</html>

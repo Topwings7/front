@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+      window.addEventListener("DOMContentLoaded",function(){
+        var btn = document.querySelector("button");
+        btn.onclick = function(){
+          //객체생성
+          var xhr = new XMLHttpRequest();
+
+          //응답처리시 상태에 따라 호출되는 아이를 설정
+          xhr.onreadystatechange = function(){
+            console.log(xhr.readyState); //상태가변할때마다 호출이된다 readystagte 속성은 0~4가있고 mdn보자
+            if (xhr.readyState == 4 && xhr.status == 200) { //비동기식여서 걸린다 나중에실행됨
+                document.querySelector("p").innerHTML = xhr.responseText;
+            }
+          };
+          //준비
+          xhr.open("get","http://localhost:8080/mydata/data.xml",true)
+          //보내기
+          xhr.send();
+        };
+      });
+    </script>
+  </head>
+  <body>
+    <h3>데이타를 가져오자</h3>
+    <p></p>
+    <button type="button" name="button">데이터 가져오기</button>
+  </body>
+</html>

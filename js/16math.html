@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      //숫자와 관련된 객체
+      //랜덤 , 소수점 내림, 반올림, 올림, 최솟값, 최댓값
+      //최대 max 최소 min
+      var n1 = 5, n2 = 5, n3 = 8, n4 =9, n5 = 1 ;
+      console.log(Math.max(n1,n3,n4));
+      var nArr= [5,4,8,9,1];
+      console.log("최솟값 : "+Math.min(...nArr));//... 나열에 관한 연산자.
+
+      //ceil(), floor(), round()
+      var n2 = 40.567;
+      console.log("올림  :"+Math.ceil(n2));
+      console.log("내림  :"+Math.floor(n2));
+      console.log("반올림 :"+Math.round(((n2*100)/100)));
+
+      //abs() 절대값
+      console.log("절대값:"+Math.abs(-10));
+      //random()
+      console.log("랜덤 : "+(Math.floor(Math.random()*45)+1));
+      for (var i = 0; i < 10; i++) {
+        console.log("랜덤 : "+(parseInt(Math.random()*45)+1));
+      }
+      //toFixed();  특정자리 소수점에서 반올림 문자열로 표기
+      var n3 = 12345.678;
+      console.log(n3.toFixed());
+      console.log(n3.toFixed(1));
+      console.log(n3.toFixed(5));
+    </script>
+  </body>
+</html>

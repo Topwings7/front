@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>08magin.html</title>
+    <style media="screen">
+      /*margin : 상 하 좌 우 요소<element> 사이ㅡ이 거리*/
+      *{margin:0}
+      div{border:1px solid}
+      .myDiv{background:aqua; margin:20px 10px 5px 0;}
+      .mt-5{margin-top:5px;}
+      /*요소끼리 마진이 붙어있는경우 상쇄된다*/
+      /*부모와 자식 관계의 경우 상쇄된다*/
+    </style>
+  </head>
+  <body>
+    <h3>여백을 남기는것</h3>
+    <p>요소와 요소의 거리를 만드는 속성,
+    일반적으로 두 요소사이의 마진은 두마진의 합만큼 떨어지게 된다
+    예외:
+    위쪽요소와 , 아래쪽 요소가 있을때,
+    부모와 자식요소가 있을때
+    그 사이의 마진은 겹친다.
+  </p>
+    <div class="myDiv">
+      div
+    </div>
+    <div class="mt-5">
+      아래 div
+    </div>
+    <div class="mt_5">
+      <div class="mt_5">
+        자식 div
+      </div>
+    </div>
+  </body>
+</html>

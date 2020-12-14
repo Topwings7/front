@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+    //3.시작버튼을 클릭시 현재 년월일 시분초가 초당 갱신되면서 출력되도록 하시오.
+    function clock(){
+      (setInterval(function(){
+        t = new Date();
+        document.getElementById("timeview").innerHTML = t;
+      },1000)); //자기호출 함수식으로 선언 되네..
+    }
+
+    </script>
+  </head>
+  <body>
+    <button type="button" name="button" onclick="clock()">시작</button>
+    <hr>
+    <span id="timeview"></span>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+      var j = 0;
+      for (var i = 0; i < 100; i++) {
+        let k = 0;
+        k +=i;
+        j +=i;
+        console.log("j 값 :"+j);
+        console.log("k 값 :"+k);
+      }
+      console.log("for문 끝 j 값:"+j);
+      //console.log(k);//지역변수라 사용할수없다 않는다
+
+      var boolvar = false;
+      while(boolvar){//false라 들어오지 않음
+        j++;
+        console.log(j);
+      }
+      console.log("while문 끝 j 값:"+j);
+      let z = 3.14
+      document.write("<h1>"+z+"<h1>");
+      var r = 5;
+
+      function triangle(r){
+      const x = 3.14;
+      var result = r*r*x;
+      return result;
+      }
+
+      var su = Number(prompt("정수입력"));
+      document.write("<h1>입력한 정수의 값 :"+su+"<h1>");
+      switch (su) {
+        case 1:
+        alert('1을 입력');
+        break;
+        case 2:
+        alert('2를 입력');
+        break;
+        case 3:
+        alert('3을 입력');
+        break;
+        case 4:
+        alert('4를 입력');
+        break;
+      }
+    </script>
+  </head>
+  <body>
+    <script>
+    document.write("<h1>"+triangle(5)+"<h1>");
+    </script>
+  </body>
+</html>

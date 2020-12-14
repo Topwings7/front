@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+    function addhobby(){
+      text = document.getElementsByTagName("input");
+      console.dir(text);
+      li   = document.getElementsByTagName("li");
+      console.dir(li);
+      for (var i = 0; i < text.length; i++) {
+        li[i].innerHTML = text[i].value;
+    }
+  }
+  function myFuction(){
+    audio = document.getElementById("audio");
+    video = document.getElementById("video");
+    console.dir(audio);
+    console.dir(video);
+  }
+  function play(){
+      audio = document.getElementById("audio");
+      video = document.getElementById("video");
+      video.play();
+      audio.play(); //이거였네
+  }
+  function stop(){
+    audio = document.getElementById("audio");
+    video = document.getElementById("video");
+    video.pause();
+    audio.pause(); //이거였네
+  }
+  </script>
+  </head>
+  <body  onload="myFuction()">
+    인풋박스 3개를 만들어 취미 세가지를 입력받고
+    추가버튼 클릭시 아래에 있는 li에 추가되도록 하시오.
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <input type="text" name="" value="" placeholder="어떻게" >
+    <input type="text" name="" value="" placeholder="접근">
+    <input type="text" name="" value="" placeholder="해야하지?" >
+    <button type="button" name="button" onclick="addhobby(); play();">추가</button>
+    <button type="button" name="button" onclick="stop();">정지</button>
+    <audio src="1.mp3" controls id="audio">
+    </audio>
+    <video src="main.webm"  id="video"> //비디오태그에 오토플레이 접근????????
+    </video>
+  </body>
+</html>

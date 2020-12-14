@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script   src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+    var cnt=0;
+    var marginLeft = 0;
+    $(function(){
+      $("#next").click(function(){
+        if(cnt<10){
+          cnt++;
+        }else{
+          cnt = 0;
+        }
+        marginLeft = -300 * cnt;
+          $("#imgs>ul").css("margin-left", marginLeft+"px");
+      });
+      $("#prev").click(function(){
+        if(cnt>0){
+          cnt--;
+          marginLeft = -300 * cnt;
+        }else{
+          cnt =10;
+          marginLeft = -300 * cnt;
+        }
+        $("#imgs>ul").css("margin-left", marginLeft+"px");
+      });
+    });
+    </script>
+    <style media="screen">
+    *{margin: 0; padding: 0;}
+    #imgs{
+      /*박스모양*/
+      width:calc(300px * 4);
+      height: 300px;
+      /*넘치는 이미지를 숨김*/
+      overflow: hidden;
+      /*버튼의 부모가 되도록 만듬*/
+      position: relative;
+      /*가운데 정렬*/
+      margin: 0 auto;
+      top: 300px;
+
+    }
+    /*이미지리스트 모양*/
+    #imgs>ul{list-style: none;}
+    #imgs>ul::after{content:"";clear:both; display: block;}
+    #imgs>ul>li{float:left; }
+    /*버튼 모양*/
+    #imgs>a{
+      position: absolute;
+      top:40%;
+      height:50px;
+      background: yellow;
+      border-radius: 50%;
+      text-decoration: none;
+      text-align: center;
+      line-height: 50px;
+    }
+    #prev{left:0px;}
+    #next{right:0px;}
+    </style>
+  </body>
+  <div id="imgs">
+    <ul>
+      <li><img src="../img/11.png"></li>
+      <li><img src="../img/22.png"></li>
+      <li><img src="../img/33.png"></li>
+      <li><img src="../img/44.png"></li>
+      <li><img src="../img/55.png"></li>
+      <li><img src="../img/66.png"></li>
+      <li><img src="../img/77.png"></li>
+      <li><img src="../img/88.png"></li>
+      <li><img src="../img/99.png"></li>
+      <li><img src="../img/111.png"></li>
+      <li><img src="../img/222.png"></li>
+      <li><img src="../img/11.png"></li>
+      <li><img src="../img/22.png"></li>
+      <li><img src="../img/33.png"></li>
+    </ul>
+    <a id="next">&gt;&gt;</a>
+    <a id="prev">&lt;&lt;</a>
+</html>

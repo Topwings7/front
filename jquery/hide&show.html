@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script   src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script>
+  //이벤트+애니매이션이 섞인 효과
+  //파라미터 속도, 콜백함수
+  $(function(){
+    $("button:contains(숨기기)").on("click",function(){
+      $("p").hide(3000);
+    });
+    $("button:contains(보이기)").on("click",function(){
+      $("p").show(3000, function(){ //콜백함수 쇼이벤트가 끝날때 호출해준다
+        alert("콜백함수 실행");
+      });
+    });
+    $("button:contains(토글)").on("click",function(){
+      $("p").toggle();
+    });
+  });
+  </script>
+  </head>
+  <body>
+    <p>보이기,숨기기 효과!!</p>
+    <button type="button" name="button">숨기기</button>
+    <button type="button" name="button">보이기</button>
+    <button type="button" name="button">토글</button>
+  </body>
+</html>

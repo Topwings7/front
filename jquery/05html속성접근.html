@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript">
+          $(function(){
+            //html의 속성을 가져와보자
+            console.log($("a").attr("href"));
+            console.log($("p").attr("name"));
+
+            //속성변경
+            //$("요소").attr("속성명","속성값");
+            $("a").attr("href","https://www.google.com");
+          });
+        </script>
+      </head>
+      <body>
+        <a href="https://www.naver.com">네이버</a>
+        <p name="test">테스트</p>
+      </body>
+    </html>

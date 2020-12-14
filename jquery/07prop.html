@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>07prop.html</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        console.log($("input[name=greeting]").attr("readonly"));
+        console.log($("input[name=greeting]").prop("readonly"));
+
+        //checked인 아이를 빨강 테두리로 바꾸자
+        let length = $("input[name=food]").length;
+        for(let i=0; i < length; i++){
+          if($("input[name=food]").eq(i).prop("checked")){
+            $("input[name=food]").eq(i).css({"width":"100px","height":"100px"});
+          }
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <input type="text" name="greeting" value="안녕하세요" readonly>
+    <input type="radio" name="food" value="마카롱">마카롱<br>
+    <input type="radio" name="food" value="다쿠아즈" checked>다쿠아즈<br>
+    <input type="radio" name="food" value="까눌레">까눌레<br>
+  </body>
+</html>

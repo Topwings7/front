@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>08css.html</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      //css수정
+      $(function(){
+        console.log($("p").css("background-color"));
+        $("h3").css("color","red");
+
+        //두 가지 이상의 스타일적용
+        $("h4").css({"color":"blue", "border":"1px solid black"});
+
+        //class속성을 추가 삭제해서도 style변경이 가능했음
+        $("button").click(function(){
+          $("div").toggleClass("b_tomato");
+        });
+      });
+    </script>
+    <style media="screen">
+      .b_tomato{background:tomato}
+    </style>
+  </head>
+  <body>
+    <p style="background-color:yellow">css를 수정해보자</p>
+    <h3>글자색 변경</h3>
+    <h4>글자색과 보더를 변경</h4>
+    <div>
+      여기 배경을 바꾸기
+    </div>
+    <button type="button" name="button">배경색 바꾸기버튼</button>
+  </body>
+</html>

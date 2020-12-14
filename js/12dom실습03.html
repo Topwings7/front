@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    숫자1 : <input type="number" name="num1" >
+    숫자2 : <input type="number" name="num2" >
+    <hr>
+    결과 :  <span id="rs"></span>
+    <hr>
+    <button type="button" onclick="plus()">+</button>
+    <button type="button" onclick="sub()">-</button>
+    <button type="button" onclick="mul()">*</button>
+    <button type="button" onclick="divi()">/</button>
+
+    <script>
+    function plus(){
+      //숫자로바꾸기 parseInt(su); Number(su); su*1;
+      n1 = document.querySelector("input[name=num1]").value*1;
+      n2 = document.querySelector("input[name=num2]").value*1;
+      document.getElementById("rs").innerText = (n1+n2);
+    }
+    function sub(){
+      n1 = document.querySelector("input[name=num1]").value*1;
+      n2 = document.querySelector("input[name=num2]").value*1;
+      document.getElementById("rs").innerText = (n1+n2);
+    }
+    function mul(){
+      n1 = document.querySelector("input[name=num1]").value*1;
+      n2 = document.querySelector("input[name=num2]").value*1;
+      document.getElementById("rs").innerText = (n1+n2);
+    }
+    function divi(){
+      n1 = document.querySelector("input[name=num1]").value*1;
+      n2 = document.querySelector("input[name=num2]").value*1;
+      document.getElementById("rs").innerText = (n1+n2);
+    }
+    </script>
+  </body>
+</html>

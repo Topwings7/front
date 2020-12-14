@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>07border.html</title>
+    <style>
+      /*
+      테두리를 바꾸자
+      width, style, color, radius, image
+      width : 넓이
+      style : 모양
+      color : 색
+      radius: 곡선
+      image : 이미지
+      */
+      .border_default{border:1px solid black}
+      .dotted{border-style:dotted}
+      .dashed{border-width:3px; border-style:dashed}
+      .double{border-width:3px; border-color:purple; border-style:double}
+      /*상하좌우 효과를 다르케 줄수있따*/
+      .groove{
+        border-width:5px 10px 15px 20px;
+        border-style:groove dashed;
+        border-color:red green blue;
+      }
+      .ridge{
+        border-style:ridge;
+        border-radius: 100px 100px ;
+      }
+      .o{
+        width:200px;
+        height:200px;
+        background-color:purple;
+        border-radius: 500px 1px;
+        border-radius: 500px 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>테두리</h3>
+    <div class="border_default">테두리를 서렁해보자.</div>
+    <div class="dotted">dotted.</div>
+    <div class="dashed">dashed.</div>
+    <div class="double">double.</div>
+    <div class="groove">groove.</div>
+    <div class="ridge">ridge.</div>
+    <div class="o">
+      원형만들기
+    </div>
+  </body>
+</html>

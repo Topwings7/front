@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+    /* absolute포지션은 절대 위치 값으로 브라우저를 기준으로 왼쪽위에서 시작된다 또는 static이 아닌(기본이 아닌) 부모라면 부모를 기준으로한다./*/
+    div{
+      width: 100px;
+      height: 100px;
+    }
+     .ex01{
+      background: red;
+      position: absolute;
+      top:0px;
+      left:0px;
+    }
+     .ex02{
+      background: orange;
+      position: absolute;
+      top:50px;
+      left:50px;
+    }
+     .ex03{
+      background: yellow;
+      position: absolute;
+      top:150px;
+      left:150px;
+    }
+     .ex04{
+       width:500px;
+       height: 500px;
+      background: green;
+      position: absolute;
+      top:300px;
+      left:0px;
+    }
+     .ex05{
+      background: purple;
+      position: absolute;
+      top:200px;
+      left:150px;
+    }
+  </style>
+</head>
+<body>
+  <div class="ex01"></div>
+  <div class="ex02"></div>
+  <div class="ex03"></div>
+  <div class="ex04"><div class="ex05">랩으로싸면 기준이 거기부터     position: absolute;</div></div>
+
+</body>
+</html>

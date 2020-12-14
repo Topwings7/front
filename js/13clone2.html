@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script>
+  window.addEventListener("DOMContentLoaded",function(){
+    var but = document.getElementById("sub");
+    but.onclick = function(){
+      alert(1);
+      var fom = document.myForm;
+      var name = fom.name.value;
+      var age  = fom.age.value;
+      var intro = fom.intro.value;
+      var hobby = fom.hobby.value;
+      var food = fom.foods.value;
+      var sul = [];
+      for (var i = 0; i < fom.sul.length; i++) {
+        if (fom.sul[i].checked) {
+          sul.push(fom.sul[i].value);
+        }
+      }
+      var birthday = fom.birthday.value;
+      str = "이름은 : "+name+"<br>";
+      str += "나이는 : "+age+"<br>";
+      str += "소개는 : "+intro+"<br>";
+      str += "취미는 : "+hobby+"<br>";
+      str += "안주는 : "+food+"<br>";
+      str += "술은 : ";
+      for (var el of sul) {
+        str += el+", ";
+      }
+      str = str.substring(0,str.length-2);
+      str+= "<br>";
+      str += "생일은 : "+birthday+"<br>";
+      document.getElementById("rs").innerHTML = str;
+    };
+  });
+  </script>
+</head>
+<body>
+  <form name="myForm">
+    <input type="text" name="name"  placeholder="이름"><br>
+    <input type="text" name="age"  placeholder="나이"><br>
+    <textarea name="intro" rows="8" cols="80" placeholder="자기소개"></textarea>
+    <fieldset>
+      <legend>취미</legend>
+      <label> <input type="radio" name="hobby" value="피아노">피아노 </label>
+      <label> <input type="radio" name="hobby" value="기타">기타 </label>
+      <label> <input type="radio" name="hobby" value="음악감상">음악감상 </label>
+    </fieldset>
+    안주선택 :
+    <select  name="foods">
+      <option value="피자">피자</option>
+      <option value="탕수육">탕수육</option>
+      <option value="양장피">양장피</option>
+    </select>
+    <fieldset>
+      <legend>주류</legend>
+      <label> <input type="checkbox" name="sul" value="소주">소주 </label>
+      <label> <input type="checkbox" name="sul" value="맥주">맥주 </label>
+      <label> <input type="checkbox" name="sul" value="사케">사케 </label>
+      <label> <input type="checkbox" name="sul" value="고량주">고량주 </label>
+    </fieldset>
+    <input type="date" name="birthday" >
+    <button id  ="sub" type="button" name="button">전송</button>
+  </form>
+  <pre id="rs"></pre>
+</body>
+</html>

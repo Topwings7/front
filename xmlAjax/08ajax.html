@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+    window.addEventListener("DOMContentLoaded",function(){
+      var btn = document.querySelector("button").onclick = function(){
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function(){
+          if(xhr.status == 200){
+            var rs = xhr.responseText;
+            var obj = JSON.parse(rs);
+            var movies = [];
+            movies = obj.movies;
+            var tbody = document.querySelector("tbody");
+            for (var i = 0; i < movies.length; i++) {
+              var year = movies[i].year;
+              var tr = document.createElement("tr");
+              var td = document.createElement("td");
+                td.innerHTML = year;
+                tr.appendChild(td);
+                tbody.appendChild(tr);
+
+            }
+          }
+        }
+        xhr.open("get","http://localhost:8080/mydata/year.json",true);
+        xhr.send();
+      }
+    });
+    </script>
+  </head>
+  <body>
+    <button type="button" name="button">MARVEL</button>
+    <table>
+      <tbody>
+
+      </tbody>
+    </table>
+  </body>
+</html>

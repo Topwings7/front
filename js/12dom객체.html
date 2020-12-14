@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>12dom.html</title>
+  </head>
+  <body>
+    <p>
+      dom html 문서에 있는 내용을 자바스크립트로 변경, 추가,삭제,변경 등등을
+      하기위한 모델
+      <br>
+      html 요소에 접근을 해야함.
+      태그,id, class... 등등의 선태갖로 해당하는 엘리먼트를 가져온다
+    </p>
+    <hr>
+    <dl>
+      <dt> <h3>요소를 선택하는 방법</h3> </dt>
+      <dd>
+        id로 선택<br>
+        document.getElementById('아이디'); 메서드를 활용
+        <hr>
+        class로 선택<br>
+        document.getElementsByClassName('클래스');
+        <hr>
+        tag로 선택<br>
+        document.getElementsByTag('태그명');
+        <hr>
+        선택자로 선택<br>
+        document.querySelector('선택자');
+        document.querySelectorAll('선택자');
+      </dd>
+    </dl>
+    <hr>
+    <ul>
+      <li id="sun">일요일</li>
+      <li class="weekdays">월요일</li>
+      <li class="weekdays">화요일</li>
+      <li class="weekdays">수요일</li>
+      <li class="weekdays">목요일</li>
+      <li class="weekdays">금요일</li>
+      <li >토요일</li>
+    </ul>
+    <audio src="" id=ad>
+
+    </audio>
+    <script>
+    //id선택
+      var sun = document.getElementById('sun');
+      var audio = document.getElementById('ad');
+      console.dir(audio);//객체의 구조를 알려줌
+      var weekdays = document.getElementsByClassName('weekdays');
+      console.log(weekdays); //객체를 찍어줌
+      console.dir(weekdays);
+      console.log(weekdays[0]);
+      var monday = weekdays[0];
+      monday.innerHTML= "innerHTML 태그를 다가져오고";
+      var thusday = weekdays[1];
+      thusday.innerText = "innerText 이거는 택스트만";
+      var li = document.getElementsByTagName("li");
+      console.dir(li);
+      li[0].style = "background : #ccc";
+      for (let i = 0; i < li.length; i++) {
+          //li[i].style.background="red";
+          //li[i].style = "border: 1px solid yellow";
+          li[i].style.border = "1px solid yellow"; //둘다 가능
+      }
+      //querySelector  //
+      var sun2 = document.querySelector("ul li#sun");
+      var sun3 = document.querySelector("ul li:nth-child(1)");
+      console.log(sun2);
+      console.log(sun3);
+    </script>
+
+  </body>
+</html>

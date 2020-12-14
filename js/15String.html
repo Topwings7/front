@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+      var str1  = "가나다라마바사아자차카타파하";
+      var str2  = new String("가나다라마바사아자차카타파하");
+      console.dir(str1);
+      console.dir(str2);
+      console.log("물자열의 길이:", str1.length);
+      console.log("물자열의 길이:", str2.length);
+      //string은 두가지다 메서드와 속성을 사용할 수 있다.
+      //indexOf("찾으려는 문자열") : 찾의려는 물자열의 길이를 표현한다
+      console.log(str1.indexOf("마바사"));
+      //console.log(str1.lastIndexOf("찾으려는 문자열"));
+      str2 = "가나야야야가나야야야가나야야야";
+      console.log(str2.lastIndexOf("가나"));
+      //문자열 자르기
+      //substring(시작 index, 끝 index);
+      var str3 = new String("귀여운 뚜 루루 뚜루 바다속 뚜 루루 뚜루 아기 상어");
+      console.dir(str3);
+      str3. substring(4,16);
+      console.log(str3.substring(str3.indexOf("뚜 루루")),str3.lastIndexOf("뚜 루루"));
+
+      //문자열을 특정 문자를 기준으로 나누기
+      var str4 = "010-9999-5555";
+      var str4Arr = str4.split("-");
+      console.log(str4Arr);
+
+      //문자열 교체
+      //replace("기존문자열","바꿀문자열");
+      //str3
+      console.log(str3.replace(/뚜 루루/g,"그랑죠")); //정규표현식
+      console.log(str3.replace("뚜 루루","그랑죠")); //정규표현식
+      window.addEventListener("DOMContentLoaded", function(){
+        button = document.getElementById("bu");
+        button.onclick = function(){
+          p = document.getElementById("test");
+          console.dir(p);
+          text = p.textContent;
+          p.innerHTML = text.toUpperCase();
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <p id="test">Stay hungry, Stay Foolish</p>
+    <button type="button" name="button" id="bu">대문자로 변경</button>
+  </body>
+</html>

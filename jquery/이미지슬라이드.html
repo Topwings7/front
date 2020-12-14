@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script   src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+    $(function(){
+      var cnt=1;
+      $("a").click(function(){
+        if($(this).text()=="다음"){
+            cnt++;
+          if (cnt!=10) {
+            tnt = "0"+cnt;
+          }else if(cnt==10){
+            cnt = 0;
+            tnt = "1"+cnt;
+          }
+          $("img").attr("src","../img/bimg"+tnt+".jpg");
+        }
+      });
+      $("a").click(function(){
+        if($(this).text() == "이전"){
+            cnt--;
+          if(cnt!=0){
+            tnt = "0"+cnt;
+          }else if(cnt==0){
+            tnt = "1"+cnt;
+            cnt = 9;
+          }
+          $("img").attr("src","../img/bimg"+tnt+".jpg");
+        }
+      })
+    });
+    </script>
+    <style media="screen">
+      div{width:320px; margin:0 auto; position: relative;}
+      div>a{
+        /*버튼 위치*/
+        position: absolute; top:45%; left:20px;
+        /*버튼 모양*/
+        background:blue; width:50px; height:40px; border-radius: 20px;
+        /*글자 모양, 위치*/
+        color:white; line-height: 40px; text-decoration: none; text-align: center;
+        }
+        /*다음 버튼 위치 이동*/
+        div>a:last-child{
+          position: absolute ; left:245px;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div class="">
+      <img src="../img/bimg01.jpg">
+      <a href="#">이전</a>
+      <a href="#">다음</a>
+    </div>
+  </body>
+</html>

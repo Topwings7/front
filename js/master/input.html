@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+        function move(){
+          hre = document.getElementById("address").value;
+          location.href = "https://www."+hre+".com";
+        }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="address">
+    <button type="button" name="button" onclick="move()">이동</button>
+  </body>
+</html>

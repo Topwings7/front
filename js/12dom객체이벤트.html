@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p>form안쪽은 input은 value라는 속성으로 접근한다.</p>
+    <input type="text" placeholder="음식이름을 적으세요">
+    <button type="button" onclick="getText();">입력한 글자 가져오기</button>
+    <h3 id="rs"></h3>
+    <script>
+      function getText(){
+        //인풋에 입력된 글자 가져오기
+        var input = document.getElementsByTagName("input")[0]; //처음에 한개만 받아온다
+        text = input.value; //input 속에 있는 값을
+        var rs = document.getElementById("rs");
+        rs.innerHTML = text;
+      }
+    </script>
+  </body>
+</html>

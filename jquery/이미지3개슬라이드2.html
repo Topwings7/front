@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script   src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+      $(function(){
+        $("#next").click(function(){
+          var firstLi = $("ul>li").first(); //첫번째를 가져와서
+          var ul = $("ul");
+          ul.append(firstLi); // append메서드는 대상을 떼어다 마지막에 붙인다
+        });
+        $("#prev").click(function(){
+          $("ul").prepend($("ul>li").last());
+        });
+      });
+    </script>
+    <style media="screen">
+      *{margin: 0; padding: 0;}
+      #imgs{
+        /*박스모양*/
+        width:calc(176px * 3);
+        height: 176px;
+        /*넘치는 이미지를 숨김*/
+        overflow: hidden;
+        /*버튼의 부모가 되도록 만듬*/
+        position: relative;
+        /*가운데 정렬*/
+        margin: 0 auto;
+        /*테두리*/
+        border:1px solid rgba(255, 0, 0, 0.8);
+      }
+      /*이미지리스트 모양*/
+      #imgs>ul{list-style: none;}
+      #imgs>ul::after{content:"";clear:both; display: block;}
+      #imgs>ul>li{float:left;}
+      /*버튼 모양*/
+      #imgs>a{
+        position: absolute;
+        top:40%;
+        height:50px;
+        background: yellow;
+        border-radius: 50%;
+        text-decoration: none;
+        text-align: center;
+        line-height: 50px;
+      }
+      #prev{left:0px;}
+      #next{right:0px;}
+    </style>
+  </head>
+  <body>
+    <div id="imgs">
+      <ul>
+        <li><img src="../img/simg01.jpg" > </li>
+        <li><img src="../img/simg02.jpg" > </li>
+        <li><img src="../img/simg03.jpg" > </li>
+        <li><img src="../img/simg04.jpg" > </li>
+        <li><img src="../img/simg05.jpg" > </li>
+        <li><img src="../img/simg06.jpg" > </li>
+        <li><img src="../img/simg07.jpg" > </li>
+        <li><img src="../img/simg08.jpg" > </li>
+        <li><img src="../img/simg09.jpg" > </li>
+        <li><img src="../img/simg10.jpg" > </li>
+      </ul>
+      <a id="next">&gt;&gt;</a>
+      <a id="prev">&lt;&lt;</a>
+    </div>
+  </body>
+</html>

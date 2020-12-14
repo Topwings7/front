@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <script>
+    function getValue(element){
+      var str = element.value;
+      document.getElementById("rs").innerHTML = str;
+    }
+  </script>
+  <body>
+    <fieldset>
+      <legend>취미</legend>
+      <label ><input type="radio" name="hobby" value="피아노" onclick="getValue(this)">피아노</label>
+      <label ><input type="radio" name="hobby" value="운동" onclick="getValue(this)">운동</label>
+      <label ><input type="radio" name="hobby" value="독서" onclick="getValue(this)">독서</label>
+    </fieldset>
+    <p id="rs"></p>
+  </body>
+</html>

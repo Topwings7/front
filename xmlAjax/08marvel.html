@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script   src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script>
+  function genRowspan(className){
+    $("." + className).each(function() {
+      var rows = $("." + className + ":contains('" + $(this).text() + "')");
+      if (rows.length > 1) {
+        rows.eq(0).attr("rowspan", rows.length);
+        rows.not(":eq(0)").remove();
+      }
+    });
+  }
+  $(function(){
+
+    $("button").click(function(){
+      $.ajax({
+        url:"http://localhost:8080/mydata/marvel.json",
+        success : function(rs){
+          var movies = rs.movies;
+          for (var i = 0; i < movies.length; i++) {
+            var year    = movies[i].year;
+            var name    = movies[i].name;
+            var subname = movies[i].subname;
+            var director= movies[i].director;
+            var state   = movies[i].state;
+                $("tbody").append("<tr><td class='year'>"+year+"</td><td><a href='#'>"+name+"</a><br>"+subname+"</td><td>"+director+"</td><td class='state'>"+state+"</td></tr>");
+              }
+              genRowspan("year");
+              genRowspan("state");
+            }
+      });
+    });
+  });
+  </script>
+  <style media="screen">
+  table{width:617px; text-align: center; background-color: #efefef;}
+  </style>
+</head>
+<body>
+  <button type="button" name="button">MAVEL</button>
+  <table id="aa">
+    <tbody>
+      <tr>
+        <td>연도</td>
+        <td>제목<br>원제</td>
+        <td>감독</td>
+        <td>상태</td>
+      </tr>
+      <tr>
+        <td colspan="4">인피니티 사가</td>
+      </tr >
+      <tr>
+        <td colspan="4">페이즈 1</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

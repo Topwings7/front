@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      div{
+        width:100px;
+        height:100px;
+      }
+      .floating{
+        float:left;
+      }
+      .b_r{
+        background:red;
+      }
+      .b_o{
+        background:orange
+      }
+      .b_y{
+        background:yellow
+      }
+      .b_g{
+        background:green
+      }
+      .b_b{
+        background:blue
+      }
+      .w_500{
+        clear:both;
+        width:500px;
+        background:navy;
+      }
+      .w_501{
+        clear:both;
+        width:500px;
+        background:purple;
+      }
+      .w_100{
+        width:100px;
+      }
+      .h_100{
+        height:100px;
+      }
+      .bor_3{
+        border:3px solid black;
+      }
+      .first_article::after{  /*이클래스 마지막 부분에*/
+        content:"";           /*내용으로*/
+        display:block;        /*블럭형으로바꾸고*/
+        clear:both;           /*floating 원상대로*/
+      }
+    </style>
+  </head>
+  <body>
+    <h3>요소를 띄우는 속성</h3>
+    <ol>
+      <li>이미지 열어 글자를 정렬할 때</li>
+      <li>박스를 옆으로 나열할 때</li>
+    </ol>
+    <div class="b_r floating"></div>
+    <div class="b_o floating"></div>
+    <div class="b_y floating"></div>
+    <div class="b_g floating"></div>
+    <div class="b_b floating" ></div>
+    <div class="w_500 "></div>
+    <div class="w_501 "></div>
+    <article class="bor_3 first_article">
+      <section class="w_100 h_100 b_r floating">
+
+      </section>
+      <section class="w_100 h_100 b_b floating">
+
+      </section>
+    </article>
+    <article class="bor_3">
+      <div class="b_y">
+
+      </div>
+    </article>
+  </body>
+</html>

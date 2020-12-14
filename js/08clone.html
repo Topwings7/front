@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    //08반복문
+    <script>
+    j =1;
+    document.write("<ul>");
+    while(j<=10){
+      document.write("<li>");
+      document.write(j);
+      document.write("</li>");
+      j++;
+    }
+    document.write("<table>");
+    document.write("<caption>구구단 가로<caption>");
+    for (var i = 2; i <= 9; i++) {
+      document.write("<tr>")
+      for (var j = 1; j <= 9; j++) {
+        document.write("<td>"+i+"*"+j+"="+(i*j)+"<td>");
+      }
+    document.write("</tr>");
+  }
+  document.write("</table>");
+  document.write("<table>");
+  for (var i = 1; i <= 9; i++) {
+    document.write("<tr>")
+    for (var j = 2; j <= 9; j++) {
+      document.write("<td>"+j+"*"+i+"="+(i*j)+"</td>");
+    }
+    document.write("</tr>");
+  }
+  document.write("</table>");
+    </script>
+
+  </body>
+</html>

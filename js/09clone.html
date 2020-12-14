@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+    //배열
+    //변수들의 묶음
+    //var 변수명 = [데이터1, 데이터2, 데이터3]
+    //배열의 크기가 가변이다
+    var arr = ["사과","바나나","딸기",10,12,13];
+    console.log(arr);
+    for (var i = 0; i < arr.length; i++) {
+      document.write(arr[i]);
+    }
+    //배열선언 2
+    document.write("<hr>");
+    var arr2 = new Array("아하아하","재밋는","스크립트");
+    arr[3] = "인간의 욕심은 끝이없고 같은 실수를 반복한다";
+    document.write(arr2,"<br>");
+    document.write(arr2+"<br>");
+    for(const el of arr2){
+      document.write(el,"<br>");
+      document.write("나온다","<br>");
+    }
+    //배열선언 3
+    var arr3 = [];
+    arr3["name"] = "오하나";
+    arr3["age"]  = 19;
+    //for in  문
+    for(var key in arr3){
+      document.write(arr3[key],"<br>")
+    }
+    document.write("<hr>");
+
+    //method
+    var arr4 = ["일번","이번","삼번","사번"];
+    arr4.push("오번");
+    document.write(arr4+"<br>");
+    var num = arr4.pop();
+    document.write(num,"<br>");
+
+    var people = ["김소월","나태주","안도현","윤동주","한용운"];
+    people.splice(2,0,"이상","이육사") //(시작위치, 자를갯수, 데이터1,데이터2...)
+    people.splice(2,2,"이상","이육사");
+    document.write(people);
+    //slice() 특정부분을 반환
+    var p = people.slice(1,3); //(시작위치,종료위치-1) 1번방부터 2번방까지
+    document.write("<br>");
+    document.write(p);
+
+    document.write("<br>");
+    //sort()
+    document.write(people);
+    document.write("<hr>");
+    document.write(people.sort());
+    doocument.write("<hr>");
+    //reverse 역으로변경   정렬아니고 현재상태에서 그냥 역으로
+    document.write();
+    document.write(people.sort().reverse());
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

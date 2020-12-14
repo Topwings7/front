@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <fieldset>
+      <legend>취미</legend>
+      <label ><input type="radio" name="hobby" value="피아노">피아노</label>
+      <label ><input type="radio" name="hobby" value="운동" >운동</label>
+      <label ><input type="radio" name="hobby" value="독서" >독서</label>
+      <button type="button" name="button" onclick="chk()">출력</button>
+    </fieldset>
+    <p id="rs"></p>
+    <script>
+      // input = document.getElementsByTagName("input")[0];
+      // console.dir(input);
+      // console.log(document.getElementsByTagName("input")[0].checked === false); //비교연산
+
+      function chk(){
+        radioList = document.querySelectorAll("input[type=radio]");
+        for(var e of radioList){
+          if(e.checked){
+              str= e.value;
+          }
+        }
+        document.getElementById("rs").innerText = str;
+      }
+    </script>
+  </body>
+</html>

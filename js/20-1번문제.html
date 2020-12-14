@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+    //1.사용자로 부터 생년월일을 입력받아 오늘부터 몇일뒤가 생일인지 계산하여 출력하시오.
+    window.addEventListener("DOMContentLoaded",function(){
+      button = document.getElementById("button");
+      button.onclick = function(){
+      inputdate = document.getElementById("brith").value;
+      brith = new Date(inputdate); //인풋태그값
+      mileb = brith.getTime();
+      baseline = new Date();
+      milel = baseline.getTime();
+      target = (milel-mileb) /1000/60/60/24 ;
+      if (target>0) {
+        document.getElementById("rs").innerHTML ="생일은"+Math.floor(Math.abs(target))+"일 전"
+      }else{
+        document.getElementById("rs").innerHTML ="생일은"+Math.floor(Math.abs(target))+"일 후"
+      }
+    }
+    });
+    </script>
+  </head>
+  <body>
+    <input type="date" name="" id="brith" placeholder="생일입력">
+    <button type="button" name="button" id="button">생일계산</button>
+    <hr>
+    <span id="rs"></span>
+  </body>
+</html>

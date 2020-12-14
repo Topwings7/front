@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>16Pseude-classes.html</title>
+    <style media="screen">
+      a:link{color:red}                   /*방문전*/
+      a[href*=naver]:visited{color:gray} /*방문후*/
+      p:hover{background:aqua}           /*마우스올렸을때*/
+      /*순서로 선택*/
+      ol>li:first-child {color:red}      /*ol의 자식 li에*/
+      ol>li:nth-child(2n) {color:blue}   /*2n 2의 배수*/
+      ol>li:last-child{color:green}      /*밑에서 부터*/
+
+      input:checked{                /*radio박스 체크되면*/
+        width:100px; height: 100px;
+      }
+      option:checked{color:red} /*select 옵션박스 체크되면*/
+      inpu :focus{border:3px solid lightgreen}
+    </style>
+  </head>
+  <body>
+    <h3>가상클래스</h3>
+    <p>
+      특정 효과를 줄때  씀<br>
+      특정 행동을 했을때나 어떠한 상태일 때!<br>
+      마우스오버를 했을 때, 클릭을 했을 때 등등.
+    </p>
+    <ul>
+      <li><a href="https://www.nate.com">녜이튜</a></li>
+      <li><a href="https://www.naver.com">레이뜨</a></li>
+    </ul>
+    <ol>
+      <li>하나</li>
+      <li>두나</li>
+      <li>세나</li>
+      <li>사나</li>
+      <li>오나</li>
+      <li>유나</li>
+      <li>치드나</li>
+    </ol>
+
+    <form>
+      <input type="text" name="" value="" placeholder="입력하시오"><br>
+      <textarea name="name" rows="8" cols="80" placeholder="내용을 쓰세요"></textarea><br>
+      <fieldset>
+        <legend>성별</legend>
+
+        <input type="radio" name="sex" value="남">남,
+        <input type="radio" name="sex" value="여">여
+        <select class="" name="">
+          <option value="">파스타</option>
+          <option value="">뽀끔밥</option>
+          <option value="">새우뽀끔밥</option>
+        </select>
+      </fieldset>
+    </form>
+  </body>
+</html>

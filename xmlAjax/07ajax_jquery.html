@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script  src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+    $(function(){
+      $("button").click(function(){
+        $.ajax({
+          url:"http://localhost:8080/mydata/data.json",
+          success : function(rs){
+            var p = rs.products;
+            for (var i = 0; i < p.length; i++) {
+                var name = p[i].name;
+                var price= p[i].price;
+                $("#pick").append("<tr><td>"+name+"</td><td>"+price+"</td><tr>");
+            }
+          }
+        })
+      });
+    });
+    </script>
+  </head>
+  <body>
+    <button type="button" name="button">jquery데이터 가져오기</button>
+    <table>
+      <tbody id="pick">
+        <tr>
+          <td>상품명</td>
+          <td>가격</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

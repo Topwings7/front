@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>클론코딩</title>
+    <style>
+      *{
+        margin  : 0;
+        padding : 0;
+        list-style : none;
+        box-sizing:border-box;
+      }
+      p {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+}
+      #header {width:100%; text-align:center; position:fixed; top:0; border-bottom:1px solid gray; overflow:hidden; height:100px; line-height:100px; z-index: 9999;box-sizing:border-box; background-color:white;}
+      #header .h1 {float:left; width:300px;}
+      #header .h1 ul li{width :30%; float:left;}
+      #header .h2 {width:1000px; margin:0 auto;}
+      #header .h2 ul li{width :12%; float:left;}
+      #header .h3 {width:300px;  float:right; }
+      #header .h3 ul li{width :30%; float:right;}
+      #sectionWrap {width:900px; margin:0 auto;  background:aqua; position: relative; top:100px; box-sizing:border-box;}
+      #sectionWrap #aside{width:600px; position: relative; box-sizing:border-box; float:left;}
+      #sectionWrap .aside1{width:600px;  background-color:purple; position:relative;  float:left;}
+      #sectionWrap .aside1 ul {position: relative; width:100%;  float:left; margin:20px 0;}
+      #sectionWrap .aside1 ul li{position: relative; width:23%; margin-right:2%; float:left;}
+      #sectionWrap .aside1 ul li{position: relative; width:23%; margin-right:2%; float:left;}
+      #sectionWrap .aside1 ul li p{width: 100%; padding: 10px; float: left; background: #444a60; color: #fff;}
+
+      #sectionWrap #bside{width:300px; height: 900px; background-color: red;  box-sizing:border-box; float: left;}
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <div class="h1">
+        <ul>
+          <li><a href="https://entertain.naver.com/home"><img src="../img/naver/naver_log.png" alt="네이버 로고"></a></li>
+          <li><a href="#"><img src="../img/naver/TV연예.png" alt="tv연예"></a></li>
+          <li><a href="#"><img src="../img/naver/뉴스.png" alt="뉴스"></a></li>
+        </ul>
+      </div>
+      <div class="h2">
+        <ul>
+          <li><a href="#"><img src="../img/naver/TV연예홈1.png" ></a></li>
+          <li><a href="#"><img src="../img/naver/TV.png" ></a></li>
+          <li><a href="#"><img src="../img/naver/포토.png" ></a></li>
+          <li><a href="#"><img src="../img/naver/랭킹.png" ></a></li>
+          <li><a href="#"><img src="../img/naver/영화.png" ></a></li>
+          <li><a href="#"><img src="../img/naver/now.png" ></a></li>
+          <li><a href="#"><img src="../img/naver/스타캐스트.png" ></a></li>
+          <li><a href="#"><img src="../img/naver/vlive.png" ></a></li>
+        </ul>
+      </div>
+      <div class="h3">
+        <ul>
+          <li><a href="#"><img src="../img/naver/돋보기.png" ></a></li>
+          <li><a href="#"><img src="../img/naver/네모.png" ></a></li>
+          <li><a href="#"><img src="../img/naver/로그인.png" ></a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="sectionWrap">
+      <div id="aside">
+        <div class="aside1">
+          <ul>
+            <li>
+              <a href="">
+                <div class="thumbnail">
+                <img src="../img/naver/tv리스트1.jpg" width="100%;">
+                <img src="../img/naver/time.png" class="time" >
+                <img src="../img/naver/play_ico.png" class="play">
+                  </div>
+                  <p>text</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <div class="thumbnail">
+                <img src="../img/naver/tv리스트2.jpg" width="100%;">
+                </div>
+                <p>text</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <div class="thumbnail">
+                <img src="../img/naver/tv리스트3.jpg" width="100%;">
+                </div>
+                <p>text</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <div class="thumbnail">
+                <img src="../img/naver/tv리스트4.jpg" width="100%;">
+                </div>
+                <p>text</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="aside2">
+        </div>
+        <div class="aside3">
+        </div>
+        <div class="aside4">
+        </div>
+      </div>
+      <div id="bside">
+
+      </div>
+    </div>
+  </body>
+</html>

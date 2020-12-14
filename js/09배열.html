@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>09배열.html</title>
+    <script>
+      //배열
+      //변수들의 묶음
+      //var 변수명 = [데이터1, 데이터2, 데이터3];
+      //배열의 크기가 가변이다.
+      var myArr = ["사과","바나나","딸기",10,11,12,true,false];
+      console.log(myArr);
+      for (var i = 0; i < myArr.length; i++) {
+        document.write(myArr[i]);
+      }
+      //배열을 만드는 두번째 방식
+      document.write("<hr>");
+      var myArr2 = new Array("고무고무","동강동강","이글이글");
+      myArr2[3] = "인간인가"; // 배열에 추가
+      document.write(myArr2,"<br>");
+
+      //var = [] 변수명
+      var myArr3 = [];
+      myArr3["name"] = "오하나"; //key값을 스트링으러 넣음
+      myArr3["age"] = 19;
+      //자바의 foreach 와 같은 반복문
+      // for(int a : 인트형배열){
+      // }
+      for (var key in myArr3) {
+        document.write(myArr3[key],"<br>");
+      }
+      document.write("<hr>");
+      for(const el of myArr2){
+        document.write(el,"<br>");
+        document.write("나온다","<br>");
+      }
+
+      document.write(myArr3["name"],"<br>"); //꺼낼때 key값으로 가져와야한다
+      document.write(myArr3["age"],"<br>");
+
+      //배열에 메서드도 있음!!!
+      var myArr4 = ["일번","이번","삼번","사번"];
+      myArr4.push("오번");
+      document.write(myArr4,"<br>");
+
+      var num = myArr4.pop();
+      document.write(num,"<br>");
+
+      //배열 세가지 방식으로 취미, 가격,, 등등 가각 배열을 만들고 값을 넣고 , 갑을 추가
+      hobbyArr = ["피아노","기타","요리","게임","음주","삽질"];
+      foodArr = new Array("탕수육", "피자", "햄버거");
+      foodArr.push("볶음밥");
+      for (var i = 0; i < foodArr.length; i++) {
+        document.write(foodArr[i]);
+        document.write("<br>");
+      }
+      var f1 = foodArr.pop();
+      document.write(f1);
+
+      s = ["그냥넣기"];
+      s = new Array("값추가");
+      s = []; s.push(); s.pop(); s[0] ="요기추가"; s["element"] = "이렇게 추가";
+      for (var i = 0; i < s.length; i++) {
+        console.log(s[i]);
+      }
+      console.log(s["element"]);
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

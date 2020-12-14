@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+    //익명함수   var name = function(){} 방식
+    //아무데서나 호출할수없음 다른 스크립트를 링크했을때 외부충돌을 방지
+    //두수를 인자로 받아 사칙연산하는 익명함수 정의 및 사용
+    var plus = function(n1, n2){
+      document.write("<h4>"+(n1+n2)+"<h4>");
+    }
+    var minus = function (n1, n2){
+      document.write("<h4>"+(n1-n2)+"<h4>");
+    }
+    var div = function (n1, n2){
+      document.write("<h4>"+(n1/n2)+"<h4>");
+    }
+    var mul = function (n1, n2){
+      document.write("<h4>"+(n1*n2)+"<h4>");
+    }
+    var rem = function (n1, n2){
+      document.write("<h4>"+(n1%n2)+"<h4>");
+    }
+    plus(4,7); minus(8,4); div(10,5); mul(2,5); rem(50,5);
+    //5개의 숫자를 받아 총합 평균을 반환하는 즉시실행함수를 실행
+    document.write("<h3>즉시실행함수<h3>");
+    (function(n1,n2,n3,n4,n5){
+        var res = 0;
+        for (var i = 0; i < arguments.length; i++) {
+          res += arguments[i];
+        }
+        var len = arguments.callee.length;
+     var sum = n1+n2+n3+n4+n5;
+     var avg = sum/res;
+      document.write("<span> 총합:"+sum+"</span><br><span> 평균:"+avg);
+    })(1,1,1,1,1);
+
+    (function(...arg){
+      var sum = 0;
+      for(var a of arg){
+        sum += a;
+      }
+      document.write("<br>총합 :"+sum);
+    })(20,30,40);
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

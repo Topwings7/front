@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <button type="button" name="button" onclick="change()">요일바꾸기</button>
+    <ul>
+      <li>일요일</li>
+      <li>월요일</li>
+      <li>화요일</li>
+      <li>수요일</li>
+      <li>목요일</li>
+      <li>금요일</li>
+      <li>토요일</li>
+    </ul>
+    <script>
+        function change(){
+          list  = document.getElementsByTagName("li");
+          for (var i = 0; i < list.length; i++) {
+            list[i].innerHTML = "토요일";
+          }
+        }
+    </script>
+  </body>
+</html>

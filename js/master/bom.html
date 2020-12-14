@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+      //q브라우저 객체 모델(BOM)
+      //window 브라우저 창
+      console.log(window.innerWidth);
+      console.log(window.innerHeight);
+      console.log(window); //이객체는 window생략가능
+      // window.alert("window 객체");
+      // alert("window생략가능")
+      //브라우저마다 기능이 달라서 적용이 안되는 브라우저도 많음.
+      //navigation toolbar
+      //location toolbar
+      //titlebar
+      //tab bar
+      //브라우저를 새로 만들기
+      function opWin(){
+        myWin = window.open("class.html","새창 이름", "menubar=yes");// 상대경로랑 절대경로를 쓸수있음
+      }
+      function clWin(){
+        myWin.close();
+      }
+    </script>
+  </head>
+  <body>
+    <button type="button" name="button" onclick="opWin()">새창만들기</button>
+    <button type="button" name="button" onclick="clWin()">닫기</button>
+  </body>
+</html>

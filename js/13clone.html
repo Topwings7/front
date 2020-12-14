@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+    window.addEventListener("DOMContentLoaded", function(){
+      var button = document.getElementById("submit");
+      button.onclick = function (){
+        var user = document.user;
+        var id = user.id.value;
+        var pass = user.pass.value;
+        var date = user.birth.value;
+        var sex = user.sex.value;
+        var size = user.size.value;
+        var color = []
+        for (var i = 0; i < user.color.length; i++) {
+          if (user.color[i].checked) {
+            color.push(user.color[i].value);
+          }
+        }
+        str = "아이디 :"+ id+"<br>";
+        str += "비밀번호 :"+pass+"<br>";
+        str += "생일 :"+date+"<br>";
+        str += "성별 :" +sex+"<br>";
+        str += "크기:"+size+"<br>";
+        str += "색상:";
+        for(var el of color){
+          str += el+",";
+        }
+        console.log(str);
+        str = str.substring(0, str.length-2);
+        document.getElementById("rs").innerHTML = str;
+      };
+    });
+
+    </script>
+  </head>
+  <body>
+    <form  name="user">
+      아이디  &nbsp;&nbsp; : <input type="text" name="id"> <br>
+      비밀번호 :&nbsp;<input type="password" name="pass"> <br>
+      생일&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     :&nbsp;<input type="date" name="birth">
+      <fieldset>
+        <legend>성별</legend>
+        <input type="radio" name="sex" value="M" >M
+        <input type="radio" name="sex" value="F" >F
+      </fieldset>
+      <fieldset>
+        <legend>사이즈</legend>
+        <select name="size">
+          <label><option value="M">M</option></label>
+          <label><option value="L">L</option></label>
+          <label><option value="XL">XL</option></label>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>색상</legend>
+        <label>빨강<input type="checkbox" name="color" value="빨강"></label>
+        <label>초록<input type="checkbox" name="color" value="초록"></label>
+        <label>남색<input type="checkbox" name="color" value="남색"></label>
+      </fieldset>
+      <button id="submit" type="button" name="button">전송</button>
+    </form>
+    <span id="rs"></span>
+
+  </body>
+</html>

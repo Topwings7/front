@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <script>
+    //form에서 입력 span에 출력 자바스크립트 이벤트발생
+    window.addEventListener("DOMContentLoaded", function(){
+      //버튼에 이벤트를 직접 걸어주자
+      var button = document.getElementById("submit");
+       button.onclick = function(){ //이벤트기 때문에 실행할 함수를 정의해서 넣어줘야한다
+         //클릭되었을때 실행할 내용
+         //form안에 name속성이 있으면  그name으로 접근가능하다
+         //document.myForm.name
+         var f = document.myForm;
+         var name = f.name.value;
+         var age = f.age.value;
+         var intro = f.introduce.value;
+         var hobby = f.hobby.value; //라디오 태그도 선택된 value만 가져오기때문에 value를 사용할수 있다
+         var language = f.language.value; //select 박스는 어짜피 선택된것만 들어온다
+         console.log(f.foods); // log:구조  //checkbox는 배열로 가져와서
+         console.dir(f.foods); // dir:내용
+         var foodArr = [];
+         for (let i = 0; i < f.foods.length; i++) {
+           if(f.foods[i].checked)
+              foodArr.push(f.foods[i].value);
+         }
+         var birthdate = f.birthdate.value;
+          str = "이름은 : "+name+"<br>";
+          str += "나이는 : "+age+"<br>";
+          str += "자기소개는 : "+intro+"<br>";
+          str += "취미는 : " +hobby+"<br>";
+          str += "언어는 : "+language+"<br>";
+          str += "음식 : ";
+          for(var fo of foodArr){
+            str += fo+", ";
+          }
+          str = str.substring(0, str.length-2);
+          str +="<br>"
+          str += "생년월일 : "+birthdate+"<br>";
+          //span에 추가
+          document.getElementById("rs").innerHTML = str;
+       };
+    });
+
+  </script>
+  <body>
+    <!-- <form name="myForm"> //폼안에있는것들은 폼에 네임을 주면 폼으로 접근가능하다 -->
+    <form name="myForm" >
+      <input type="text" name="name" placeholder="이름"><br>
+      <input type="number" name="age" placeholder="나이"><br>
+      <textarea name="introduce" rows="8" cols="80" placeholder="자기소개"></textarea><br>
+      <fieldset>
+        <legend>취미</legend>
+        <label> <input type="radio" name="hobby" value="피아노">피아노 </label>
+        <label> <input type="radio" name="hobby" value="운동">운동 </label>
+        <label> <input type="radio" name="hobby" value="독서">독서 </label>
+      </fieldset>
+      언어선택 :
+      <select name="language">
+        <option value="java">java</option>
+        <option value="javascript">javascript</option>
+        <option value="pyhton">pyhton</option>
+      </select>
+      <fieldset>
+        <legend>좋아하는음식</legend>
+        <label> <input type="checkbox" name="foods" value="삽겹살">삽겹살</label>
+        <label> <input type="checkbox" name="foods" value="햄버거">햄버거</label>
+        <label> <input type="checkbox" name="foods" value="돈까스">돈까스</label>
+      </fieldset>
+      생년월일 : <input type="date" name="birthdate" ><br>
+      <button id="submit" type="button" name="button">내용 출력!</button>
+    </form>
+    <span id="rs"></span>
+  </body>
+</html>

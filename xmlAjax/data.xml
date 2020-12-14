@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+  <item>
+    <name>우유</name>
+    <price>2800</price>
+  </item>
+  <item>
+    <name>콜라</name>
+    <price>3000</price>
+  </item>
+  <item>
+    <name>구구크러스트</name>
+    <price>6000</price>
+  </item>
+  <item>
+    <name>진라면</name>
+    <price>800</price>
+  </item>
+</products>

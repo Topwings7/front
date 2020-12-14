@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    img {visibility:hidden; }
+    </style>
+    <script>
+    // console.log(document);
+    // console.dir(document);
+    // console.log(window);
+    // console.dir(window);
+    function addp(n){
+      radio = document.getElementsByTagName("input")[n];
+      p     = document.getElementsByTagName("p")[0];
+      p.innerHTML = radio.value;
+    }
+    function test(n){
+      radi = document.getElementsByTagName("input")[n].value;
+      a    = document.getElementsByTagName("a")[n];
+      a.innerHTML = radi;
+    }
+    function deletep(){
+      p = document.getElementsByTagName("p");
+      for (var i = 0; i < p.length; i++) {
+        p[i].innerHTML= "";
+      }
+    }
+    function veiw(){
+      img = document.getElementById("im");
+      img.style = "visibility:visible";
+      console.log("test");
+    }
+    function del(){
+      img = document.getElementById("im");
+      img.style = "visibility:hidden;"
+      console.log("test1");
+    }
+
+    </script>
+  </head>
+  <body>
+      <img id="im" src="../img/naver/검색창.png" >
+      <input type="text" name="" value="" onfocus="veiw();" onblur="del();">
+      <input type="radio" name="food" value="피자" onclick="addp(0); test(0);" >피자
+      <input type="radio" name="food" value="햄버거" onclick="addp(1); test(1);">햄버거
+      <input type="radio" name="food" value="탕수육" onclick="addp(2); test(2);">탕수육
+      <button type="button" name="button" onclick="deletep();">초기화</button>
+    <p></p>
+      <a href="#"></a>
+      <a href="#"></a>
+      <a href="#"></a>
+
+
+
+  </body>
+</html>

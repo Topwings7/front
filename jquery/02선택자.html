@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script type="text/javascript">
+     //제이쿼리 선택자
+     $(function(){
+       //태그로 선택
+       var jqueryUl = $("ul");
+       console.dir(jqueryUl);
+       var javascriptUl = document.querySelectorAll("ul");
+       console.dir(javascriptUl);
+
+       //id로 선택
+       $("#my_01");
+       document.querySelector("#my_01");
+       document.getElementById("my_01");
+       //class로 선택
+       var jqueryPasta = $(".pasta");
+       document.querySelectorAll(".pasta");
+       var javascriptPasta = document.getElementsByClassName("pasta");
+
+       //jqeury
+       jqueryPasta.addClass("b_red");
+       //javascript
+       for(let i = 0; i < javascriptPasta.length; i++){
+         javascriptPasta[i].className += " bor_blue";
+       }
+       //index가 1번인 아이를 선택
+       jqueryPasta.eq(1).addClass("f_green");
+     });
+   </script>
+   <style media="screen">
+  .b_red{background:red}
+  .bor_blue{border : 1px solid blue}
+  .f_green{color:green}
+</style>
+  </head>
+  <body>
+    <ul>
+         <li id="my_01">순대국</li>
+         <li>돼지국밥</li>
+         <li>설렁탕</li>
+       </ul>
+       <ol>
+         <li class="pasta">알리올리오</li>
+         <li class="pasta">빠네</li>
+         <li class="pasta">로제파스타</li>
+       </ol>
+     </body>
+   </html>
+
+   <dl>
+     <dt>하이1</dt><!--노란색 테두리 -->
+     <dd>하이1 설명</dd><!--보라색 배경-->
+     <dt>하이2</dt><!--노란색 테두리 -->
+     <dd>하이2 설명</dd><!--보라색 배경-->
+     <dt>하이3</dt><!--노란색 테두리 -->
+     <dd>하이3 설명</dd><!--보라색 배경-->
+     <dt>하이4</dt><!--노란색 테두리 -->
+     <dd>하이4 설명</dd><!--보라색 배경-->
+   </dl>
+     <ul>
+       <li>빨간글씨</li>
+       <li>빨간글씨</li>
+       <li>빨간글씨</li>
+     </ul>
+     <ol>
+       <li>파란글씨</li>
+       <li>빨간 글씨, 파란테두리</li>
+     </ol>
+
+  </body>
+</html>

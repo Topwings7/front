@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script   src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+    $(function(){
+      $("button").one("click",function(){
+        $.ajax({ //{}객체를 집어넣음 {url: 주소, dataType: 데이터형식, type: 요청방식 success}
+          url: "http://localhost:8080/mydata/data.json",
+          dataType: "json",// 받을 데이터 형식 //xml,text,html
+          type:"get", //요청할방식 method
+          success : function(rs){ //성공시 실행할 내용  function(rs객체 <=여기에다 받아짐)
+            console.log(rs);
+            var p = rs.products;
+            $("div").append("<ul>");
+            for (var i = 0; i < p.length; i++) {
+              var str = p[i].name + " : " + p[i].price;
+              $("div>ul").append("<li>"+str+"</li>");
+            }
+            $("div").append("</ul>");
+          },
+          error : function(e){//에러시 실행할 내용
+            alert("에러",e);
+          }
+        });
+      });
+    });
+    </script>
+  </head>
+  <body>
+  <button type="button" name="button">jquery데이터 가져오기</button>
+  <div></div>
+  </body>
+</html>

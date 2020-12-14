@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+    //파일 만들어 student function 을 만들어서 이름,나이,수학성적,영어성적,국어성적,평균,총합을 구하는 메서드를 구현하고 객체 5개를 만들어 각각의 이름 나이 평균 총점을 출력
+    function Student(name,age,kor,eng,math){
+      this.name=name;
+      this.age=age;
+      this.kor=kor;
+      this.eng=eng;
+      this.math=math;
+      this.total= kor+eng+math;
+      this.avg = this.total/3;
+
+      this.toString = function(){
+          return "이름 :"+this.name+"\n나이 :"+this.age+"\n국어점수 :"+this.kor+"\n영어점수 :"+this.eng+"\n수학점수 :"+this.math+"\n총점 :"+this.total+"\n평균 :"+this.avg; //이시점에서 total이나 avg는 없음 꼭 this붙여줘야함
+      }
+    }
+      var student1 = new Student("이하나",18,100,100,100);
+      var student2 = new Student("박하나",18,99,99,99);
+      var student3 = new Student("곽하나",18,98,98,98);
+      var student4 = new Student("송하나",18,97,97,97);
+      var student5 = new Student("오하나",18,94,95,96);
+      var students = [student1,student2,student3,student4,student5]; //배열에 넣고 뿌려 뿌려뿌려
+      for (var i = 0; i < students.length; i++) {
+        console.log(students[i].toString());
+      }
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

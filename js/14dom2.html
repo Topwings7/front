@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    .yellow{background: black;}
+    </style>
+    <script>
+    window.addEventListener("DOMContentLoaded", function(){
+      var la = document.getElementById("la");
+      var ul = la.parentNode; //ID:la 기준 부모단 ul
+      console.dir(ul);
+      var p = ul.previousElementSibling; //ul기준 전 형제단 p
+      console.log(p);
+      p.style = "font-size:20px";
+      var ol = ul.nextElementSibling; //ul기준
+      console.dir(ol);
+      ol.style.border = "1px solid green";
+      var olchild = ol.childNodes; //ol기준 자식들 전부 text와 element포함
+      console.dir(olchild);
+      olchild[1].style = "color:blue; border:1px solid yellow";
+      olchild[7].style = "border: 1px dotted blue";
+      //div의 마지막요소 가보자
+      console.dir(ol);
+      var div2 = ol.parentNode; //ol기준 부모단 div
+      console.dir(div2);
+      var max = div2.parentNode; // div 기준 부모단 div
+      console.dir(max);
+      var list = max.childNodes; //최상위단 기준 아래접근하기위해
+      console.dir(list);
+      var sec = list[3];        // 최상위단에서 section접근
+      console.dir(sec);
+      var but = sec.firstElementChild;  //버튼 접근
+      console.dir(but);
+      var addclass = la.nextElementSibling; // la기준 밑에 li에 class추가
+      console.dir(addclass);
+      but.onclick = function(){
+        addclass.className = "yellow";
+      };
+    });
+    </script>
+  </head>
+  <body>
+    <div>
+      <div>
+        <p>라면 끓이기</p>
+        <ul>
+          <li>물</li>
+          <li id="la">라면</li>
+          <li>계란</li>
+          <li>대파</li>
+        </ul>
+        <ol>
+          <li>물을 끓인다</li>
+          <li>라면을 넣는다</li>
+          <li>파를 송송</li>
+          <li>계란을 넣는다</li>
+        </ol>
+      </div>
+      <section>
+        <button type="button" name="button">버튼</button>클릭시 클래스를 yellow로 변경
+      </section>
+    </div>
+  </body>
+</html>

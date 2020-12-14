@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .l1{
+        float:left;
+        margin:5px;
+        background:black;
+        width:100px;
+        height:100px;
+      }
+      .l2{
+        float:left;
+        margin-top:5px;
+        background:black;
+        width:100px;
+        height:100px;
+      }
+      .l3{
+        clear:both;
+        width:205px;
+        height:100px;
+        background:black;
+        margin:5px;
+      }
+      .l4,.l5,.l6{
+        float:left;
+        width:60px;
+        height:100px;
+        background:black;
+        margin:5px;
+      }
+      .fo{
+        position:relative;
+        top:-108px;
+        float:left;
+      }
+      .cl{
+        clear:both;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="lwrap">
+      <div class="l1"></div>
+      <div class="l2"></div>
+      <div class="l3"></div>
+      <div class="l4"></div>
+      <div class="l5"></div>
+      <div class="l6"></div>
+    </div>
+    <div class="rwrap fo">
+      <div class="l3 fo ma"></div>
+      <div class="l4 cl fo"></div>
+      <div class="l5 fo"></div>
+      <div class="l6 fo"></div>
+    </div>
+  </body>
+</html>

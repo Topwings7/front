@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="checkbox" value="100" >100원
+    <input type="checkbox" value="200" >200원
+    <input type="checkbox" value="300" >300원
+    <button type="button" name="button" onclick="cash()">계산</button>
+    <p id="rs">금액</p>
+  </body>
+  <script>
+  function cash(){
+    input = document.getElementsByTagName("input");
+    console.log(input);
+    result = document.getElementById("rs");
+    var sum = 0;
+    for (var i = 0; i < input.length; i++) {
+      if(input[i].checked == true){
+        sum += input[i].value*1;
+      }
+    }
+    console.log(sum);
+
+    result.innerHTML = "금액 :"+sum;
+  }
+
+  </script>
+</html>

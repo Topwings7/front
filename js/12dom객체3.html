@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script>
+  //윈도우란 아이에게 이벤트를 추가하는 함수; addEventListener
+  window.addEventListener("DOMContentLoaded",function(){ // 이벤트가 있는것이다.
+    list  = document.getElementsByTagName("li");
+    for (var i = 0; i < list.length; i++) {
+      list[i].innerHTML = "토요일";
+    }
+  });  //html이 전부 로드 되었을때 DOMContentLoaded   방법1
+  function myFunction(){
+
+    list  = document.getElementsByTagName("li");
+    for (var i = 0; i < list.length; i++) {
+      list[i].innerHTML = "토요일";
+    }
+  }
+  </script>
+</head>
+<body onload="myFuction()">
+  <ul>
+    <li>일요일</li>
+    <li>월요일</li>
+    <li>화요일</li>
+    <li>수요일</li>
+    <li>목요일</li>
+    <li>금요일</li>
+    <li>토요일</li>
+  </ul>
+</body>
+</html>

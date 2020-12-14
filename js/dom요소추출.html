@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p id="pp">아이디로접근</p>
+    <a href="#" class="ah">클래스로 접근 하나되드나?</a>
+    <select class="sel">
+      <option value="red" class="op">빨강</option>
+      <option value="yellow" class="op">노랑</option>
+      <option value="green" class="op">초록</option>
+      <option value="perple" class="op">보라</option>
+    </select>
+    <form class="fo">
+    </form>
+    <script>
+      var ptag = document.getElementById("pp");
+      console.dir(ptag);
+      ptag.innerText ="document.getElementById 아이디로 접근했다";
+      var ah = document.getElementsByClassName("ah");
+      console.dir(ah[0]); //클래스 하나여도 배열로 들어가드나? 그러네 배열로 들어가네 클래스는 무조건 배열 배열 배열
+      console.log(ah);
+      ah[0].style = "text-decoration : none;";
+      ah[0].style.color = "red";
+
+      var select = document.getElementsByTagName("select");
+      console.log(select);
+      var child = select[0].getElementsByClassName("op");
+      console.log(child);
+      var color = ["red","yellow","green","purple"];
+      for (var i = 0; i < child.length; i++) {
+        child[i].style.background = color[i];
+        child[i].style.color = color[i];
+      }
+      var form = document.querySelector("form");
+      console.dir(form);
+
+      var option = document.querySelectorAll("select>option");
+      console.log(option);
+
+    </script>
+  </body>
+</html>

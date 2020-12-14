@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    //08반복문
+    //for()
+    //while()
+    //do-while()
+    <style>
+      table {
+        width:1000px;
+        height:200px;
+        border-collapse:collapse;
+        text-align: center;
+      }
+      table td{
+        border: 1px solid black;
+      }
+    </style>
+    <script>
+      j = 1;
+      document.write("<ul>")
+      while (j<=10) {
+        document.write("<li>")
+        document.write(j);
+        document.write("</li>")
+        j++;
+      }
+      document.write("</ul>")
+      //for를 이용하여 9*9단을 테이블에 그리는 코드를 작성
+      document.write("<table>");
+      document.write("<caption>구구단 가로</caption>");
+      for (var i = 2; i < 10; i++) {
+        document.write("<tr>");
+        document.write("<td>"+i+"단"+"</td>")
+        for (var j =1 ; j < 10; j++) {
+          document.write("<td>"+i+"*"+j+"="+(i*j)+"</td>");
+        }
+        document.write("</tr>");
+      }
+      document.write("</table>");
+      document.write("<br>");
+
+      document.write("<table>");
+      document.write("<caption>구구단 세로</caption>");
+      for (var i = 1; i <= 9; i++) {
+        document.write("<tr>");
+        for (var j = 2; j <=9 ; j++) {
+          document.write("<td>"+j+"*"+i+"="+(i*j)+"</td>");
+        }
+        document.write("</tr>");
+      }
+      document.write("</table>");
+      document.write("<br>");
+
+      document.write("<table>");
+      document.write("<caption>와일문 가로</caption>");
+      var dansu =2;
+      var gosu =1;
+      while(dansu<10) {
+        document.write("<tr>")
+        while(gosu<10){
+          document.write("<td>"+dansu+"*"+gosu+"="+(dansu*gosu)+"</td>");
+          gosu++;
+        }
+        gosu=1;
+        dansu++;
+        document.write("</tr>")
+      }
+      document.write("</table>");
+      document.write("<table>");
+      </script>
+    </head>
+    <body>
+    </body>
+    </html>

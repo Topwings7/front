@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>04html내용접근.html</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      //html의 내용을 가져오고 변경 또는 추가
+      //text(),html(),val()
+      $(function(){
+        //p안쪽에 있는 "안녕하세요"를 아래 p태그에 넣어보자
+        var text01 = $("p").first().text();
+        $("#rs_p").text(text01);
+
+        //input의 값을 가져다가 아래쪽 input에 넣어보자
+        var text02 = $("input:first").val();
+        $("#rs_input").val(text02);
+
+        //ul안쪽의 내용을 다른 내용으로 바꿔보자
+        var li01 = $("ul").html();
+        li01 += "<li>반갑습니다</li>";
+        $("ul").html(li01);
+      });
+    </script>
+  </head>
+  <body>
+    <p>안녕하세요</p>
+    <p id="rs_p"></p>
+    <input type="text" name="greeting" value="안녕인풋"><br>
+    <input type="text" name="greeting" id="rs_input">
+    <ul>
+      <li>안녕하세요</li>
+    </ul>
+  </body>
+</html>

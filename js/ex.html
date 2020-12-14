@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+    window.addEventListener("DOMContentLoaded",function(){
+      var btn = document.querySelector("button");
+        btn.onclick = function(){
+          var select = document.querySelector("select");
+          var input = document.querySelector("input");
+          console.dir(select);
+          if (select.value == "ready" && input.value != "") {
+            ul = document.querySelector("ul");
+            li = document.createElement("li");
+            li.innerText = input.value;
+            ul.appendChild(li);
+          }else if(select.value == "play" && input.value != ""){
+            ol = document.querySelector("ol");
+            li = document.createElement("li");
+            li.innerText = input.value;
+            ol.appendChild(li);
+          }else if(input.value == "")
+          alert("내용을 입력해주세요");
+          }
+    });
+    </script>
+  </head>
+  <body>
+    <select>
+      <option value="ready">준비물</option>
+      <option value="play">조리법</option>
+    </select>
+    <input type="text" name="" >
+    <button type="button" name="button">추가</button>
+    <h1>된장찌개 레시피</h1>
+    <p>준비물</p>
+    <ul>
+    </ul>
+    <p>조리법</p>
+    <ol>
+    </ol>
+  </body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style media="screen">
+  *{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+  }
+  body{width: 100%;}
+  #totalwrap{position: relative;}
+  #header{width:100%; height:100px; line-height: 100px; float:left; border-bottom: 1px solid gray; position: fixed;  overflow: hidden; z-index:9999; background-color: white;}
+  #header .headerL ul li{ width:100px; float: left;}
+  #header .headerNav{ width: 1000px; margin: 0 auto;}
+  #header .headerNav ul li{width:100px;float: left;}
+  #header .headerR ul li{width:100px; float: right;}
+  #header::after{content:""; display:block; clear:both}
+  #mid{ clear: both; position: relative; width: 1200px; margin: 0 auto; top:100px;}
+  #mid #sectionWrap1 {float:left;    width: 800px;  position: relative;  text-decoration: none;  border-right: 1px solid gray;}
+  #mid #sectionWrap1 a{text-decoration: none; color : black;}
+  #mid #sectionWrap1 .section1{ width:22%; height: 200px; margin:10px 0 0 20px; float:left; position: relative; background-image:url("../img/naver/tv리스트1.jpg"); background-size:100%; }
+  #mid #sectionWrap1 .section2{ width:22%; height: 200px; margin:10px 0 0 20px; background: purple; float:left; position: relative; background-image:url("../img/naver/tv리스트2.jpg"); background-size:100%;}
+  #mid #sectionWrap1 .section3{ width:22%; height: 200px; margin:10px 0 0 20px;background: purple; float:left; position: relative; background-image:url("../img/naver/tv리스트3.jpg"); background-size:100%;}
+  #mid #sectionWrap1 .section4{ width:22%; height: 200px; margin:10px 0 0 20px;background: purple; float:left; position: relative; background-image:url("../img/naver/tv리스트4.jpg"); background-size:100%;}
+  #mid #sectionWrap1 .time{position: relative; left:130px; top:5px}
+  #mid #sectionWrap1 .play{position: relative; left:10px;}
+
+  .scrtion6{border-top: 1px solid gray;}
+  #mid #sectionWrap1 .section5{ width:765px; height: 200px; margin:50px 0 0 10px;  float:left; position: relative; background-size:100%; overflow: hidden}
+  #mid #sectionWrap1 .section5 img{ width:100%;}
+  #mid #sectionWrap1 .section5 .lg{color:gray; }
+  #mid #sectionWrap1 .section5 .un{background-color:white; color:lightgray; text-align: left;}
+  #mid #sectionWrap1 .section5 a:hover{text-decoration: underline; font-weight: bold;}
+  #mid #sectionWrap1 .section5-1{width:165px; height: 180px; margin:10px 40px 10px 10px ;background: purple; float:left; position: relative;}
+  #mid #sectionWrap1 .section5-2{margin:50px 50px 50px 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+  #mid #sectionWrap1 .section6{ width:765px; height: 200px; margin:50px 0 0 10px; float:left; position: relative; background-size:100%; overflow: hidden}
+  #mid #sectionWrap1 .section6 img{ width:100%; }
+  #mid #sectionWrap1 .section6 a:hover{text-decoration: underline; font-weight: bold;}
+  #mid #sectionWrap1 .section6 .lg{color:gray; }
+  #mid #sectionWrap1 .section6 .un{background-color:white; color:lightgray; text-align: left;}
+  #mid #sectionWrap1 .section6-1{ width:165px; height: 180px; margin:10px 40px 10px 10px ;background: purple; float:left; position: relative;}
+  #mid #sectionWrap1 .section6-2{ margin: 50px 50px 50px 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+  #mid #sectionWrap1 .section7{ width:765px;  margin:50px 0 0 20px; float:left; position: relative;  background-size:100%; float: left;}
+  #mid #sectionWrap1 .section7 img{ width:100%;}
+  #mid #sectionWrap1 .section7 a{ width:100%; text-align: center; font-size: 1.5em; margin: 0 auto}
+  #mid #sectionWrap1 .section7 span{width:100%; text-align: center;}
+  #mid #sectionWrap1 .section7 a:hover{text-decoration: underline; font-weight: bold;}
+  #mid #sectionWrap1 .section7-1{ width:30%; height: 250px; margin:50px 0 0 20px;  float:left; position: relative;   }
+  #mid #sectionWrap1 .section7-2{ width:30%; height: 250px; margin:50px 0 0 20px;  float:left; position: relative;   }
+  #mid #sectionWrap1 .section7-3{ width:30%; height: 250px; margin:50px 0 0 20px;  float:left; position: relative;   }
+  #mid #sectionWrap1 span{width: 100%; height: 50px; background: gray; display: block; text-align: center; line-height: 50px; color:white; }
+  #mid #sectionWrap1 span:hover{text-decoration: underline; font-weight: bold;}
+  #mid #bside {float:left; width: 300px; height: 1055px; background: blue;}
+
+  </style>
+  <body>
+
+  <div id="header">
+    <div class="headerL">
+      <ul>
+        <li><a href="https://entertain.naver.com/home"><img src="../img/naver/naver_log.png" alt="네이버 로고"></a></li>
+        <li><a href="#"><img src="../img/naver/TV연예.png" alt="tv연예"></a></li>
+        <li><a href="#"><img src="../img/naver/뉴스.png" alt="뉴스"></a></li>
+      </ul>
+    </div>
+    <div class="headerNav">
+      <ul>
+        <li><a href="#"><img src="../img/naver/TV연예홈1.png" ></a></li>
+        <li><a href="#"><img src="../img/naver/TV.png" ></a></li>
+        <li><a href="#"><img src="../img/naver/포토.png" ></a></li>
+        <li><a href="#"><img src="../img/naver/랭킹.png" ></a></li>
+        <li><a href="#"><img src="../img/naver/영화.png" ></a></li>
+        <li><a href="#"><img src="../img/naver/now.png" ></a></li>
+        <li><a href="#"><img src="../img/naver/스타캐스트.png" ></a></li>
+        <li><a href="#"><img src="../img/naver/vlive.png" ></a></li>
+      </ul>
+    </div>
+    <div class="headerR">
+      <ul>
+        <li><a href="#"><img src="../img/naver/돋보기.png" ></a></li>
+        <li><a href="#"><img src="../img/naver/네모.png" ></a></li>
+        <li><a href="#"><img src="../img/naver/로그인.png" ></a></li>
+      </ul>
+    </div>
+  </div>
+
+
+
+    <div id="mid">
+      <div id="sectionWrap1">
+        <a href="#">
+        <div class="section1">
+          <img src="../img/naver/time.png" class="time">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <img src="../img/naver/play_ico.png" class="play">
+          <span>링크인니다</span>
+        </div>
+        </a>
+        <a href="#">
+        <div class="section2">
+          <img src="../img/naver/time.png" class="time">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <img src="../img/naver/play_ico.png" class="play">
+          <span>링크인니다</span>
+        </div>
+        </a>
+        <a href="#">
+        <div class="section3">
+          <img src="../img/naver/time.png" class="time">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <img src="../img/naver/play_ico.png" class="play">
+          <span>링크인니다</span>
+        </div>
+        </a>
+        <a href="#">
+        <div class="section4">
+          <img src="../img/naver/time.png" class="time">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <img src="../img/naver/play_ico.png" class="play">
+          <span>링크인니다</span>
+        </div>
+        </a>
+        <div class="section5">
+        <div class="section5-1">
+          <img src="../img/naver/kim.png" >
+        </div>
+        <div class="section5-2">
+          <a href="#">Mnet '프듀' 조작 여파ing…피해 연습생들만 구설수 [종합IS]</a>
+          <br>
+          <br>
+          <br>
+          <a href="#" class="lg">CJ ENM 산하 음악채널 Mnet의 오디션 프로그램 '프로듀스' 시리즈 조작 논란의 여파가 이어지고 있다. 제작진은 실형을 선고받았지만 피해 연습생들에 대한 구제는 Mnet의 몫으로 남았다.</a>
+          <span class="un">중앙일보</span>
+        </div>
+      </div>
+        <div class="section6">
+          <div class="section6-1">
+            <img src="../img/naver/lee.png" >
+          </div>
+          <div class="section6-2">
+            <a href="#">"아이즈원 멤버였는데"…조작에 인생 바뀐 이가은·한초원 향한 관심 [엑's 초점]</a>
+            <br>
+            <br>
+            <a href="#" class="lg">[엑스포츠뉴스 김미지 기자] Mnet '프로듀스 101' 네 편의 시리즈에서 제작진의 투표 순위 조작으로 탈락한 피해 연습생들 명단이 공개된 가운데, 세 번째 시즌인 '프로듀스 48'에서 탈락한 이가은과 한초원에게 관심이 쏠리고 있다.</a>
+            <span class=un>조선일보</span>
+          </div>
+        </div>
+        <div class="section7">
+          <div class="section7-1">
+            <img src="../img/naver/sana.png">
+            <a href="#">사나조아여</a>
+            <span class="un">한국경제<span>
+          </div>
+          <div class="section7-2">
+            <img src="../img/naver/momo.png">
+            <a href="#">모모조아여</a>
+            <span class="un">헤럴드경제<span>
+          </div>
+          <div class="section7-3">
+            <img src="../img/naver/jisu.png" >
+            <a href="#">지수조아여</a>
+            <span class="un">경제신문<span>
+          </div>
+        </div>
+      </div>
+    <div id="bside">
+      <div class="">
+
+      </div>
+      <div class="">
+
+      </div>
+
+    </div>
+    </div>
+  </body>
+</html>

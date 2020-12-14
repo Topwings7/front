@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+  <head>
+    <html>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+    window.addEventListener("DOMContentLoaded", function(){ // DOM내용이 다 로딩되면
+      document.getElementById("add").addEventListener("click", function(){ //
+
+      var name = document.querySelector("input[name=name]");
+      var age = document.querySelector("input[name=age]");
+      var tr = document.createElement("tr");
+      var td1 = document.createElement("td");
+      var td2 = document.createElement("td");
+      td1.innerHTML = name.value;
+      tr.appendChild(td1);
+      td2.innerHTML = age.value;
+      console.log(td2);
+      tr.appendChild(td2);
+
+      var tbody = document.querySelector("tbody");
+      tbody.appendChild(tr);
+    });
+    document.getElementById("del").addEventListener("click",function(){
+      var del = document.querySelector("input[name=del_name]");
+      var delStr = del.value;
+      var trList = document.querySelectorAll("tbody>tr");
+      for (var i = 0; i < trList.length; i++) {
+        var td = trList[i].firstElementChild;
+        if(delStr === td.innerText) {
+          trList[i].remove();
+        }
+      }
+    });
+    });
+    </script>
+  </head>
+  <body>
+    <fieldset>
+      <legend>이름추가</legend>
+      <input type="text" name="name" placeholder="이름입력" >
+      <input type="text" name="age" placeholder="나이입력">
+      <button type="button" name="button" id="add">추가</button>
+      <hr>
+      <input type="text" name="del_name" placeholder="삭제이름">
+      <button type="button" name="button" id="del">삭제</button>
+    </fieldset>
+    <table>
+      <thead>
+        <tr>
+          <td>이름</td>
+          <td>나이</td>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </body>
+</html>

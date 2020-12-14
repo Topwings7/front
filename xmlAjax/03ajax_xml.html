@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title>03ajax_xml.html</title>
+    <script>
+    window.addEventListener("DOMContentLoaded",function(){
+      var btn = document.querySelector("button").onclick = ()=>{
+        //1
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = ()=>{
+          //4는 데이터 전송완료상태
+          //http코드를따로 보낸준다 200은 정상적인 응답일때   서버측에서 만들어서 보내준다
+          if(xhr.readyState == 4 && xhr.status == 200){
+            //서버가 응답데이터가 텍스트로 넘어옴
+            var result =  xhr.responseText;
+            console.log(result);
+            document.querySelector("div").innerHTML = result;
+          }
+        }
+        //2
+        xhr.open("get","http://localhost:8080/mydata/data.html", true);
+        //3
+        xhr.send();
+      }
+    });
+    </script>
+    <style media="screen">
+      div{border: 1px solid red;}
+    </style>
+  </head>
+  <body>
+    <h3>데이타를 가져오자</h3>
+    <div class="">
+
+    </div>
+    <button type="button" name="button">데이터 가져오기</button>
+  </body>
+</html>
